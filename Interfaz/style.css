@@ -49,7 +49,7 @@ body {
     height: 30px;
     cursor: pointer;
 }
-
+/*
 .wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -80,6 +80,48 @@ body {
     height: auto;
     border-radius: 10px;
 }
+*/
+
+/* Galeria */
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5fr);
+    grid-gap: 15px;
+}
+
+.gallery__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.gallery_item{
+    position: relative;
+    max-width: fit-content;
+}
+
+.Overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 70%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+}
+
+.gallery_item:hover .Overlay {
+    opacity: 1;
+  }
 
 /* Pie de página */
 footer {
