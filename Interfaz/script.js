@@ -9,6 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
         searchBar.style.border = '';
     });
 
+    // Evento de teclado: Detectar cuando se presiona "Enter" en la barra de búsqueda
+    searchInput.addEventListener('keydown', (event) => {
+        if (event.key === "Enter") {
+            alert(`Búsqueda realizada: ${searchInput.value}`);
+        }
+    });
+
     // Evento para las imágenes dentro de las cajas
     const boxes = document.querySelectorAll('.gallery_item');
     boxes.forEach(box => {
@@ -26,5 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    
+    // Evento para la ventana modal
+    const modal = document.getElementById("myModal");
+    const btn = document.querySelector('.Title img');
+    const span = document.getElementsByClassName("close")[0];
+
+    btn.addEventListener('click', () => {
+        modal.style.display = "block";
+    });
+
+    span.addEventListener('click', () => {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    });
 });
