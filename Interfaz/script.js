@@ -1,3 +1,4 @@
+import {Promedio} from './lib/Util.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Evento para la barra de búsqueda
