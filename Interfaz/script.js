@@ -1,4 +1,8 @@
 import {Promedio} from './lib/Util.js';
+import { GetValoracionText } from './lib/Util.js';
+var varPromedio = Promedio([3, 4, 4, 2, 5]);
+console.log(varPromedio);
+console.log(GetValoracionText(varPromedio));
 
 document.addEventListener('DOMContentLoaded', () => {
     // Evento para la barra de búsqueda
