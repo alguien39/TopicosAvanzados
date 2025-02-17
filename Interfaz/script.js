@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     // Evento para la barra de búsqueda
     const searchBar = document.querySelector('.search');
@@ -20,7 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const boxes = document.querySelectorAll('.gallery_item');
     boxes.forEach(box => {
         box.addEventListener('click', () => {
-            alert(`Has hecho clic en el item: ${box.id}`);
+            const itemId = box.id;
+            const imageSrc = box.querySelector('img').src;
+            const Title = box.querySelector('.Overlay').textContent;
+
+            const url = `./Details/Info.html?id=${itemId}&image=${encodeURIComponent(imageSrc)}&name=${encodeURIComponent(Title)}`;
+
+            window.open(url, '_blank');
         });
         
         box.addEventListener('mouseover', () => {

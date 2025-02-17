@@ -8,14 +8,17 @@
 }
 
 /* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    color: var(--text-dark);
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-dark);
     background-color: var(--background-light);
+    text-align: center;
 }
 
 /* Logo */
@@ -83,6 +86,7 @@ body {
 /* Galería */
 main {
     display: flex;
+    flex-direction: column;
     background-color: var(--background-light);
     justify-content: center;
     align-items: center;
@@ -236,4 +240,169 @@ footer {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.Estrellas{
+    margin: 20px auto;
+    width: 300px;
+}
+
+.Estrellas >*{
+    float: right;
+}
+
+.Estrellas label{
+    height: 40px;
+    width: 20%;
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+.Estrellas label::after{
+    transition: all 0.3s ease-out;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    content: "☆";
+    color: #444;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 40px;
+    -webkit-animation: 1s pulse ease;
+    animation: 1s pulse ease;
+}
+
+.Estrellas label:hover::after{
+    color: #5e5e5e;
+    text-shadow: 0 0 1px #5e5e5e;
+}
+
+.Estrellas input{
+    display: none;
+}
+
+.Estrellas input:checked + label::after,
+.Estrellas input:checked ~ label::after{
+    content: "★";
+    color: #F2C14E;
+    text-shadow: 0 0 20px #F2C14E;
+}
+
+/* Contenedor que muestra la calificación promedio (barra con estrellas) */
+.ContenedorPromedio {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px 20px;
+    color: var(--white);
+}
+
+.ContenedorPromedio > * {
+    margin-right: 15px;
+}
+
+/* Estilo para las estrellas grandes de "Promedio" */
+#ContenedorEstrellas img {
+    width: 45px;
+    height: auto;
+    margin: 0 2px;
+}
+
+/* Ajustar la tipografía de "Promedio" y "Opiniones" */
+.ContenedorPromedio Label {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#NumeroOpiniones {
+    font-size: 1.3rem;
+}
+
+/* Contenedor con la imagen y la descripción del local */
+#ContenedorInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
+}
+
+#ContenedorImagen {
+    flex: 1;
+}
+
+#ContenedorImagen img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+#ContenedorDescripcion {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+}
+
+/* Estilizar los labels de descripción */
+#ContenedorDescripcion label {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+#Nombre {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--detail);
+}
+
+#Descripcion {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* Contenedor para la sección de valoraciones (estrellas a calificar) */
+#ContenedorValoraciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Título para la sección de "Dejar Opinión" */
+#Valoracion {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#Enviar {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#Enviar:hover {
+    background-color: var(--hover-bg);
+    color: var(--hover-text);
 }
