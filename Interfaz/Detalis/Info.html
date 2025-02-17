@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tacos Express</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="navBar">
+            <div class="Title">
+                <img src="..\Imagenes\LogoTaqueria.png" alt="Logo de Tacos Express">
+            </div>
+            <div class="search">
+                <input class="search-bar" type="text" placeholder="Buscar...">
+                <img src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-gris.png" alt="Buscar" id="Lupa">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="ContenedorPromedio">
+            <div id="ContenedorEstrellas">
+                <img src="..\Imagenes\Estrella.png" alt="Estrella" class="Estrella">
+            </div>
+            <label id="Promedio">Promedio</label>
+            <label id="NumeroOpiniones">0</label>
+            <label id="Opiniones">Opiniones</label>
+        </div>
+        <div id="ContenedorInfo">
+            <div id="ContenedorImagen">
+                <img src="..\Imagenes\Tacos1.jpg" alt="Imagen" id="Imagen">
+            </div>
+            <div id="ContenedorDescripcion">
+                <label id="Nombre">Nombre Taqueria</label>
+                <label id="Descripcion">Descripcion</label>
+                <label id="Direccion">Direccion</label>
+                <label id="Telefono">Telefono</label>
+                <label id="Horario">Horario</label>
+            </div>
+        </div>
+        <div id="ContenedorValoraciones">
+            <label id="Valoracion">Dejar Opinion</label>
+            <div class="Estrellas">
+                <input type="radio" name="Estrellas" id="Estrella1">
+                <label for="Estrella1"></label>
+                <input type="radio" name="Estrellas" id="Estrella2">
+                <label for="Estrella2"></label>
+                <input type="radio" name="Estrellas" id="Estrella3">
+                <label for="Estrella3"></label>
+                <input type="radio" name="Estrellas" id="Estrella4">
+                <label for="Estrella4"></label>
+                <input type="radio" name="Estrellas" id="Estrella5">
+                <label for="Estrella5"></label>
+            </div>
+            <button id="Enviar">Enviar</button>
+        </div>
+    </main>
+    <footer>
+        <p>2025 Tacos Express.</p>
+    </footer>
+</body>
+</html>
