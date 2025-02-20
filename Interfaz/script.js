@@ -1,8 +1,10 @@
 import {Promedio} from './lib/Util.js';
 import { GetValoracionText } from './lib/Util.js';
+import { ConstruirControlHtml } from './lib/Util.js';
 var varPromedio = Promedio([3, 4, 4, 2, 5]);
 console.log(varPromedio);
 console.log(GetValoracionText(varPromedio));
+ConstruirControlHtml([3, 4, 4, 2, 5]) || alert('No se pudo construir el control HTML');
 
 document.addEventListener('DOMContentLoaded', () => {
     // Evento para la barra de búsqueda
@@ -46,21 +48,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Evento para la ventana modal
-    const modal = document.getElementById("myModal");
-    const btn = document.querySelector('.Title img');
-    const span = document.getElementsByClassName("close")[0];
+    //const modal = document.getElementById("myModal");
+    //const btn = document.querySelector('.Title img');
+    //const span = document.getElementsByClassName("close")[0];
 
-    btn.addEventListener('click', () => {
-        modal.style.display = "block";
-    });
+    //btn.addEventListener('click', () => {
+    //    modal.style.display = "block";
+    //});
 
-    span.addEventListener('click', () => {
-        modal.style.display = "none";
-    });
+    //span.addEventListener('click', () => {
+    //    modal.style.display = "none";
+    //});
 
-    window.addEventListener('click', (event) => {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    });
+   // window.addEventListener('click', (event) => {
+    //    if (event.target == modal) {
+    //        modal.style.display = "none";
+    //    }
+    //});
 });

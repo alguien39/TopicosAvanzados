@@ -24,14 +24,30 @@ export function GetValoracionText(varPromedio){
 }
 
 export function ConstruirControlHtml(arrValores){
-    const varPromedio = Promedio(arrValores);
+    const varPromedio = Math.round(Promedio(arrValores));
+    const numOpiniones = arrValores.length;
+
     document.addEventListener('DOMContentLoaded', () => {
-        const ContenedorEstrellas = document.getElementById('ContenedorEstrellas');
-        for (let i = 0; i < varPromedio; i++) {
-            ContenedorEstrellas.innerHTML = '<label for="" id="Positivo"></label>';
-        }
-        for (let i = 0; i < 5 - varPromedio; i++) {
-            ContenedorEstrellas.innerHTML = '<label for="" id="Negativo"></label>';
+        const ContenedorEstrellas = document.getElementsByClassName('ContenedorEstrellas')[0];
+        const ContenedorOpiniones = document.getElementsByClassName('ContenedorOpiniones')[0];
+
+        if (ContenedorEstrellas && ContenedorOpiniones) {
+            ContenedorEstrellas.innerHTML = '';
+            ContenedorOpiniones.innerHTML = '';
+
+            for (let i = 0; i < 5 - varPromedio; i++) {
+                ContenedorEstrellas.innerHTML += '<label id="Negativo"></label>';
+            }
+            for (let i = 0; i < varPromedio; i++) {
+                ContenedorEstrellas.innerHTML += '<label id="Positivo"></label>';
+            }
+
+            ContenedorOpiniones.innerHTML += `
+                <label id="NumeroOpiniones">${numOpiniones}</label>
+                <label id="Opiniones">Opiniones</label>
+            `;
+        } else {
+            console.error('No se encontraron los contenedores necesarios en el DOM.');
         }
     });
 }
